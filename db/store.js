@@ -35,7 +35,7 @@ class Store {
     const newNote = { title, text, id: uuid.v1() };
     const notes = await this.getNotes();
 
-    const notesArray = [notes, newNote];
+    const notesArray = [...notes, newNote];
     this.write(notesArray);
 
     return newNote;
